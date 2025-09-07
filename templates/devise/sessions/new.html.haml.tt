@@ -1,0 +1,9 @@
+%h1.font-bold.text-4xl.mbe-4 Sign in
+= form_with url: session_path(resource_name), class: "flex flex-col gap" do |form|
+  = form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "input"
+
+  = form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "input"
+
+  .flex.items-center.gap
+    = form.submit "Sign in", class: "btn btn--primary"
+    = link_to "Forgot password?", new_password_path, class: "text-sm font-medium underline"

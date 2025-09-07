@@ -1,0 +1,1 @@
+active_admin: bin/rails active_admin:watch

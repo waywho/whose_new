@@ -1,0 +1,21 @@
+%h1.font-bold.text-4xl.mbe-4 Sign up
+= form_with url: registration_path(resource_name), class: "flex flex-col gap" do |form|
+  = render "devise/shared/error_messages", resource: resource
+
+  .flex.flex-col.items-start.gap-half.mbe-4
+    = form.label :first_name, class: "text-sm font-medium leading-none"
+    = form.text_field :first_name, class: "input"
+  .flex.flex-col.items-start.gap-half.mbe-4
+    = form.label :last_name, class: "text-sm font-medium leading-none"
+    = form.text_field :last_name, class: "input"
+
+  = form.email_field :email, required: true, autofocus: true, autocomplete: "email", placeholder: "Enter your email address", class: "input"
+
+  = form.password_field :password, required: true, autocomplete: "new-password", placeholder: "Enter your password", maxlength: 72, class: "input"
+
+  = form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Confirm your password", maxlength: 72, class: "input"
+
+  .flex.items-center.gap
+    = form.submit "Sign un", class: "btn btn--primary"
+
+= render "devise/shared/links"

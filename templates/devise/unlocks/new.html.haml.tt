@@ -1,0 +1,8 @@
+%h1.font-bold.text-4xl.mbe-4 Resend unlock instructions
+= form_with url: unlock_path(resource_name), method: :post, class: "flex flex-col gap" do |form|
+  = render "devise/shared/error_messages", resource: resource
+
+  = form.email_field :email, required: true, autofocus: true, autocomplete: "email", placeholder: "Enter your email address", class: "input"
+  = form.submit "Resend unlock instructions", class: "btn btn--primary i-min"
+
+= render "devise/shared/links"
